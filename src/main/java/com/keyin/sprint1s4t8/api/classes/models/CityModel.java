@@ -1,16 +1,17 @@
 package com.keyin.sprint1s4t8.api.classes.models;
 import com.keyin.sprint1s4t8.api.classes.abstracts.Model;
+import com.keyin.sprint1s4t8.api.enums.ProvTerrCode;
 public final class CityModel extends Model {
     private String name;
-    private String province;
+    private ProvTerrCode provTerrCode;
     public CityModel(
         int id,
         String name,
-        String province
+        ProvTerrCode provTerrCode
     ) {
         super(id);
         this.name = name;
-        this.province = province;
+        this.provTerrCode = provTerrCode;
     }
     public CityModel() {
         super();
@@ -21,10 +22,10 @@ public final class CityModel extends Model {
     public void setName(String name) {
         this.name = name;
     }
-    public String getProvince() {
-        return province;
+    public ProvTerrCode getProvince() {
+        return provTerrCode;
     }
-    public void setProvince(String province) {
-        this.province = province;
+    public void setProvince(ProvTerrCode provTerrCode) {
+        this.provTerrCode = provTerrCode;
     }
 }
