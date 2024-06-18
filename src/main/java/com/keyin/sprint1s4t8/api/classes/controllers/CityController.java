@@ -1,4 +1,3 @@
-
 package com.keyin.sprint1s4t8.api.classes.controllers;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
