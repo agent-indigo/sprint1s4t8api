@@ -3,11 +3,18 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import java.util.ArrayList;
 public final class AircraftModelTest {
-    public AircraftModelTest() {}
+    private ArrayList<AircraftModel> aircraftModels;
+    private AircraftModel aircraftModel;
+    public AircraftModelTest() {
+        this.aircraftModels = new ArrayList<AircraftModel>();
+        this.aircraftModel = new AircraftModel();
+    }
     @Test
     public void testAircraftCreate() {
-        ArrayList<AircraftModel> aircraftModels = new ArrayList<>();
-        AircraftModel aircraftModel = new AircraftModel(1,"Model Test","West Jet",200);
+        aircraftModel.setId(1);
+        aircraftModel.setModel("Boeing 747");
+        aircraftModel.setAirline("WestJet");
+        aircraftModel.setCapacity(200);
         aircraftModels.add(aircraftModel);
         Assertions.assertEquals(1, aircraftModels.size());
     }
