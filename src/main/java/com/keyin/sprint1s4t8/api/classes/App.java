@@ -9,8 +9,7 @@ import org.springframework.context.annotation.ComponentScan;
     "com.keyin.sprint1s4t8.api.classes.models",
     "com.keyin.sprint1s4t8.api.classes.services"
 })
-public final class App {
-    private App() {}
+public class App {
     public static void main (String[] args) {
         SpringApplication.run(App.class, args);
     }
