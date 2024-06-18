@@ -12,11 +12,11 @@ public final class CityService {
         this.cityMap = new HashMap<Integer, CityModel>();
         this.cityNotFoundMessage = "Error: city not found.";
     }
-    public CityModel show(int index) {
-        return cityMap.get(index);
-    }
     public List<CityModel> list() {
         return List.copyOf(cityMap.values());
+    }
+    public CityModel show(int index) {
+        return cityMap.get(index);
     }
     public String add(CityModel city) {
         cityMap.put(cityMap.size() + 1, city);
