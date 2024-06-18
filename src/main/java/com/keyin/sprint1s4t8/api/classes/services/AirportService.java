@@ -28,16 +28,16 @@ public final class AirportService {
         try {
             airportMap.put(id, update);
             return "Airport successfully updated.";
-        } catch (MethodNotAllowedException fuckup) {
-            return fuckup.getStackTrace().toString();
+        } catch (MethodNotAllowedException methodNotAllowedException) {
+            return methodNotAllowedException.getStackTrace().toString();
         }
     }
     public String delete(int id) {
         try {
             airportMap.remove(id);
             return "Airport successfully deleted.";
-        } catch (MethodNotAllowedException blyat) {
-            return blyat.getStackTrace().toString();
+        } catch (MethodNotAllowedException methodNotAllowedException) {
+            return methodNotAllowedException.getStackTrace().toString();
         }
     }
 }
