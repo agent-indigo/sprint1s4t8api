@@ -16,23 +16,23 @@ public final class CityController {
     public List<CityModel> list() {
         return cityService.list();
     }
-    @GetMapping("/cities/{index}")
-    public CityModel show(@PathVariable int index) {
-        return cityService.show(index);
+    @GetMapping("/cities/{id}")
+    public CityModel show(@PathVariable int id) {
+        return cityService.show(id);
     }
     @PostMapping("/cities")
     public String add(@RequestBody CityModel city) {
         return cityService.add(city);
     }
-    @PutMapping("/cities/{index}")
+    @PutMapping("/cities/{id}")
     public String edit(
-        @PathVariable int index,
+        @PathVariable int id,
         @RequestBody CityModel city
     ) {
-        return cityService.edit(index, city);
+        return cityService.edit(id, city);
     }
-    @DeleteMapping("cities/{index}")
-    public String delete(@PathVariable int index) {
-        return cityService.delete(index);
+    @DeleteMapping("/cities/{id}")
+    public String delete(@PathVariable int id) {
+        return cityService.delete(id);
     }
 }
