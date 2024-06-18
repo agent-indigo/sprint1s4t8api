@@ -1,15 +1,38 @@
 package com.keyin.sprint1s4t8.api.classes.controllers;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
+import java.util.List;
+import com.keyin.sprint1s4t8.api.classes.models.CityModel;
+import com.keyin.sprint1s4t8.api.classes.services.CityService;
 @RestController
 @CrossOrigin
 public final class CityController {
-    public CityController() {}
-    // Just for testing if it works in a proper way
-    // path: http://localhost:8080/montreal
-    @GetMapping("/montreal")
-    public String city(){
-        return "montreal";
+    @Autowired
+    private CityService cityService;
+    public CityController() {
+        this.cityService = new CityService();
+    }
+    @GetMapping("/cities")
+    public List<CityModel> list() {
+        return cityService.list();
+    }
+    @GetMapping("/cities/{index}")
+    public CityModel get(@PathVariable int index) {
+        return cityService.show(index);
+    }
+    @PostMapping("/cities")
+    public String post(@RequestBody CityModel city) {
+        return cityService.add(city);
+    }
+    @PutMapping("/cities/{index}")
+    public String put(
+        @PathVariable int index,
+        @RequestBody CityModel city
+    ) {
+        return cityService.edit(index, city);
+    }
+    @DeleteMapping("cities/{index}")
+    public String delete(@PathVariable int index) {
+        return cityService.delete(index);
     }
 }
