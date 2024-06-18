@@ -17,15 +17,15 @@ public final class CityController {
         return cityService.list();
     }
     @GetMapping("/cities/{index}")
-    public CityModel get(@PathVariable int index) {
+    public CityModel show(@PathVariable int index) {
         return cityService.show(index);
     }
     @PostMapping("/cities")
-    public String post(@RequestBody CityModel city) {
+    public String add(@RequestBody CityModel city) {
         return cityService.add(city);
     }
     @PutMapping("/cities/{index}")
-    public String put(
+    public String edit(
         @PathVariable int index,
         @RequestBody CityModel city
     ) {
