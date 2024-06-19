@@ -10,7 +10,7 @@ public final class AircraftModelTest {
         this.aircraftModel = new AircraftModel();
     }
     @Test
-    public void testAircraftCreate() {
+    public void testCreate() {
         aircraftModel.setId(1);
         aircraftModel.setModel("Boeing 747");
         aircraftModel.setAirline("WestJet");
