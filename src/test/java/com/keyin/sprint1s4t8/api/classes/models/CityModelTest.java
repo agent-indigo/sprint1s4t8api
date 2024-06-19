@@ -8,7 +8,7 @@ public final class CityModelTest {
         this.city = new CityModel();
     }
     @Test
-    public void testCityCreate() {
+    public void testCreate() {
         city.setId(1);
         city.setName("Montreal");
         city.setProvince(ProvTerrCode.QC);
