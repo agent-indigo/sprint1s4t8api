@@ -45,4 +45,5 @@ public final class PassengerModel extends Model {
     public void setCity(CityModel city) {
         this.city = city;
     }
+    // List For Aircrafts Passengers Have Travelled On
 }
