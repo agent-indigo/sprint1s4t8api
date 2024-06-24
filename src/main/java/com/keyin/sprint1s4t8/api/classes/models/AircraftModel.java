@@ -36,4 +36,9 @@ public final class AircraftModel extends Model {
     public void setCapacity(int capacity) {
         this.capacity = capacity;
     }
+    // Need list of allowed airports
+    // Add getter and setter for allowed airports
+    // Add method to add to allowed airports.
+
+
 }

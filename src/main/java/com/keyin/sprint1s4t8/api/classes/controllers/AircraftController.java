@@ -35,4 +35,11 @@ public final class AircraftController {
     public String delete(@PathVariable int id) {
         return aircraftService.delete(id);
     }
+
+    // Set up method that takes in id of aircraft that you will add airport too. Then in the request body it will take in a Airport object of type AirportModel.
+    // Search for aircraft using service method
+    //loop over list of results. Should only be 1 aircraft
+    // If the aircraft is found
+    // In your aircraft object you will have to use the addallowed airports method found there to add the airport
+    // Error Handle Method
 }

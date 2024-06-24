@@ -1,6 +1,9 @@
 package com.keyin.sprint1s4t8.api.classes.models;
 import com.keyin.sprint1s4t8.api.classes.abstracts.Model;
 import com.keyin.sprint1s4t8.api.enums.ProvTerrCode;
+
+import java.util.List;
+
 public final class CityModel extends Model {
     private String name;
     private ProvTerrCode provTerrCode;
@@ -28,4 +31,7 @@ public final class CityModel extends Model {
     public void setProvince(ProvTerrCode provTerrCode) {
         this.provTerrCode = provTerrCode;
     }
+    // List of airports in city
+    List<AirportModel> airportModelList;
+
 }
