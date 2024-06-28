@@ -50,7 +50,7 @@ public final class PassengerService {
     }
 
     public String addAircraftToPassenger(int passengerId, AircraftModel aircraft) {
-        PassengerModel passenger = passengerMap.get(passengerId);
+        PassengerModel passenger = passengerMap.get(passengerId -1);// Bug??
         if (passenger != null) {
             passenger.addAircraft(aircraft);
             return "Aircraft successfully added to passenger.";
