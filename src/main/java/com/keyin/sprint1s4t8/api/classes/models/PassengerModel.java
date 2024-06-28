@@ -12,7 +12,7 @@ public final class PassengerModel extends Model {
     private CityModel city;
     private List<AircraftModel> aircrafts;
 
-    public PassengerModel(int id, String first, String last, String phone, CityModel city, List<AircraftModel> aircrafts) {
+    public PassengerModel(int id, String first, String last, String phone, CityModel city) {
         super(id);
         this.first = first;
         this.last = last;
