@@ -1,22 +1,16 @@
 package com.keyin.sprint1s4t8.api.classes.models;
 import com.keyin.sprint1s4t8.api.classes.abstracts.Model;
+import java.util.LinkedList;
 public final class AirportModel extends Model {
     private String name;
     private String code;
     private CityModel city;
-    public AirportModel(
-        int id,
-        String name,
-        String code,
-        CityModel city
-    ) {
-        super(id);
-        this.name = name;
-        this.code = code;
-        this.city = city;
-    }
+    private LinkedList<AircraftModel> planes;
+    private LinkedList<PassengerModel> passengers;
     public AirportModel() {
         super();
+        this.planes = new LinkedList<AircraftModel>();
+        this.passengers = new LinkedList<PassengerModel>();
     }
     public String getName() {
         return name;
@@ -35,5 +29,23 @@ public final class AirportModel extends Model {
     }
     public void setCity(CityModel city) {
         this.city = city;
+    }
+    public LinkedList<AircraftModel> getPlanes() {
+        return planes;
+    }
+    public void addPlane(AircraftModel plane) {
+        planes.addLast(plane);
+    }
+    public void deletePlane(int index) {
+        planes.remove(index);
+    }
+    public LinkedList<PassengerModel> getPassengers() {
+        return passengers;
+    }
+    public void addPassenger(PassengerModel passenger) {
+        passengers.addLast(passenger);
+    }
+    public void deletePassenger(int index) {
+        passengers.remove(index);
     }
 }
