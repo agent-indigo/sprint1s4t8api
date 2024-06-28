@@ -1,72 +1,58 @@
-//PassengerModel
 package com.keyin.sprint1s4t8.api.classes.models;
-
+import java.util.LinkedList;
 import com.keyin.sprint1s4t8.api.classes.abstracts.Model;
-import java.util.ArrayList;
-import java.util.List;
-
 public final class PassengerModel extends Model {
     private String first;
     private String last;
     private String phone;
     private CityModel city;
-    private List<AircraftModel> aircrafts;
-
-    public PassengerModel(int id, String first, String last, String phone, CityModel city) {
-        super(id);
-        this.first = first;
-        this.last = last;
-        this.phone = phone;
-        this.city = city;
-        this.aircrafts = aircrafts;
-    }
-
+    private LinkedList<AircraftModel> planes;
+    private LinkedList<AirportModel> airports;
     public PassengerModel() {
         super();
-        this.aircrafts = new ArrayList<>();
+        this.planes = new LinkedList<AircraftModel>();
+        this.airports = new LinkedList<AirportModel>();
     }
-
     public String getFirst() {
         return first;
     }
-
     public void setFirst(String first) {
         this.first = first;
     }
-
     public String getLast() {
         return last;
     }
-
     public void setLast(String last) {
         this.last = last;
     }
-
     public String getPhone() {
         return phone;
     }
-
     public void setPhone(String phone) {
         this.phone = phone;
     }
-
     public CityModel getCity() {
         return city;
     }
-
     public void setCity(CityModel city) {
         this.city = city;
     }
-
-    public List<AircraftModel> getAircrafts() {
-        return aircrafts;
+    public LinkedList<AircraftModel> getPlanes() {
+        return planes;
     }
-
-    public void setAircrafts(List<AircraftModel> aircrafts) {
-        this.aircrafts = aircrafts;
+    public void addPlane(AircraftModel plane) {
+        planes.addLast(plane);
     }
-
-    public void addAircraft(AircraftModel aircraft) {
-        this.aircrafts.add(aircraft);
+    public void deletePlane(int id) {
+        planes.remove(id);
+    }
+    public LinkedList<AirportModel> getAirports() {
+        return airports;
+    }
+    public void addAirport(AirportModel airport) {
+        airports.addLast(airport);
+    }
+    public void deleteAirport(int index) {
+        airports.remove(index);
     }
 }
