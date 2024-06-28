@@ -1,49 +1,72 @@
+//PassengerModel
 package com.keyin.sprint1s4t8.api.classes.models;
+
 import com.keyin.sprint1s4t8.api.classes.abstracts.Model;
+import java.util.ArrayList;
+import java.util.List;
+
 public final class PassengerModel extends Model {
     private String first;
     private String last;
     private String phone;
     private CityModel city;
-    public PassengerModel(
-        int id,
-        String first,
-        String last,
-        String phone,
-        CityModel city
-    ) {
+    private List<AircraftModel> aircrafts;
+
+    public PassengerModel(int id, String first, String last, String phone, CityModel city, List<AircraftModel> aircrafts) {
         super(id);
         this.first = first;
         this.last = last;
         this.phone = phone;
         this.city = city;
+        this.aircrafts = aircrafts;
     }
+
     public PassengerModel() {
         super();
+        this.aircrafts = new ArrayList<>();
     }
+
     public String getFirst() {
         return first;
     }
+
     public void setFirst(String first) {
         this.first = first;
     }
+
     public String getLast() {
         return last;
     }
+
     public void setLast(String last) {
         this.last = last;
     }
+
     public String getPhone() {
         return phone;
     }
+
     public void setPhone(String phone) {
         this.phone = phone;
     }
+
     public CityModel getCity() {
         return city;
     }
+
     public void setCity(CityModel city) {
         this.city = city;
     }
-    // List For Aircrafts Passengers Have Travelled On
+
+    public List<AircraftModel> getAircrafts() {
+        return aircrafts;
+    }
+
+    public void setAircrafts(List<AircraftModel> aircrafts) {
+        this.aircrafts = aircrafts;
+    }
+
+    public void addAircraft(AircraftModel aircraft) {
+        this.aircrafts.add(aircraft);
+    }
 }
